@@ -23,7 +23,7 @@
 // ● If the input provided does not contain any integers: “ABC”, then your solution should
 // return the appropriate error exception message.
 
-import { stringNumberCombinations } from "../src/string-number-combinations.test";
+import { stringNumberCombinations, stringNumberCombinations2 } from "../src/string-number-combinations.test";
 
 describe("String number combinations", () => {
   it.each([
@@ -33,6 +33,16 @@ describe("String number combinations", () => {
     "returns all combinations of only numbers in the input string",
     (input: string, expected: string) => {
       expect(stringNumberCombinations(input)).toEqual(expected);
+    }
+  );
+
+  it.each([
+    ["236", "632,623,362,326,263,236"],
+    ["A 3B2 C6D", "632,623,362,326,263,236"],
+  ])(
+    "returns all combinations of only numbers in the input string",
+    (input: string, expected: string) => {
+      expect(stringNumberCombinations2(input)).toEqual(expected);
     }
   );
 });
