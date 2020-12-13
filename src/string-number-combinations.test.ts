@@ -1,6 +1,10 @@
 export const stringNumberCombinations = (input: string): string => {
-  const combinations = permutations(input.split(""));
-  return combinations.map((a) => a.join("")).join(",");
+  const numbersString = input.replace(/\D/g, "").trim();
+  const combinations = permutations(numbersString.split(""));
+  return combinations
+    .map((c) => +c.join(""))
+    .sort((a, b) => b - a)
+    .join(",");
 };
 
 const permutations = (arr) => {
