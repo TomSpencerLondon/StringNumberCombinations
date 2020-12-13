@@ -9,7 +9,7 @@ export const stringNumberCombinations = (input: string): string => {
 
 const permutations = (arr) => {
   if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
-  const reduce = arr.reduce(
+  return arr.reduce(
     (acc, item, i) =>
       acc.concat(
         permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map((val) => [
@@ -19,6 +19,4 @@ const permutations = (arr) => {
       ),
     []
   );
-
-  return reduce.reverse();
 };
