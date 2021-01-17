@@ -56,18 +56,18 @@ describe("String number combinations", () => {
   ])(
     "returns all combinations of only numbers in the input string",
     (input: string, expected: string) => {
-      // console.log(solution("326"));
-      //
-      // console.log(solution("A3B 2C 6D"));
-      //
-      // console.log(solution("02518"));
-      //
-      // console.log(solution("ABCD"));
-      //
-      // console.log(solution("122"));
+      console.log(solution("326"));
+
+      console.log(solution("A3B 2C 6D"));
+
+      console.log(solution("02518"));
+
+      console.log(solution("ABCD"));
+
+      console.log(solution("122"));
 
       console.log(solution("203"));
-      // expect(solution(input)).toEqual(expected);
+      expect(solution(input)).toEqual(expected);
     }
   );
 });
