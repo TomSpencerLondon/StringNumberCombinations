@@ -21,13 +21,24 @@ const permutations = (arr) => {
   );
 };
 
+let lengthOfInput = 0;
 export const solution = (input: string): string => {
   const numbersString = input.replace(/\D/g, "").trim();
+  lengthOfInput = numbersString.length;
   const combinations = permutations2(numbersString);
-  return combinations
-    .map((c) => +c.join(""))
-    .sort((a, b) => b - a)
-    .join(",");
+  const numbers = combinations.map((c) => +c.join("")).sort((a, b) => b - a);
+  const result = [];
+  numbers.forEach((number) => {
+    let stringNumber = number.toString();
+    let isPadded = stringNumber.length;
+    while (lengthOfInput > isPadded) {
+      stringNumber = "0" + stringNumber;
+      isPadded++;
+    }
+    result.push(stringNumber);
+  });
+
+  return result.join(",");
 };
 
 const permutations2 = (string: string): string[][] => {
@@ -44,9 +55,9 @@ const permutations2 = (string: string): string[][] => {
     }
 
     const remainder = string.slice(0, i) + string.slice(i + 1, string.length);
-
     for (const permutation of permutations2(remainder)) {
-      result.push([char + permutation]);
+      const digits = [char + permutation];
+      result.push(digits);
     }
   }
   return result;

@@ -65,7 +65,7 @@ describe("String number combinations", () => {
       console.log(solution("ABCD"));
 
       console.log(solution("122"));
-
+      console.log(solution("100045"));
       console.log(solution("203"));
       expect(solution(input)).toEqual(expected);
     }
