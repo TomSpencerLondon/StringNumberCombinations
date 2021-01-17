@@ -22,8 +22,22 @@
 // obtain the correct solution
 // ● If the input provided does not contain any integers: “ABC”, then your solution should
 // return the appropriate error exception message.
-
-import { stringNumberCombinations, stringNumberCombinations2 } from "../src/string-number-combinations.test";
+// Could you please use this:
+// // console.log(solution('326'));
+//
+// // console.log(solution('A3B 2C 6D'));
+//
+// // console.log(solution('02518'));
+//
+// // console.log(solution('ABCD'));
+//
+// // console.log(solution('122'));
+//
+// // console.log(solution('203'));
+import {
+  stringNumberCombinations,
+  solution,
+} from "../src/string-number-combinations.test";
 
 describe("String number combinations", () => {
   // it.each([
@@ -42,7 +56,18 @@ describe("String number combinations", () => {
   ])(
     "returns all combinations of only numbers in the input string",
     (input: string, expected: string) => {
-      expect(stringNumberCombinations2(input)).toEqual(expected);
+      // console.log(solution("326"));
+      //
+      // console.log(solution("A3B 2C 6D"));
+      //
+      // console.log(solution("02518"));
+      //
+      // console.log(solution("ABCD"));
+      //
+      // console.log(solution("122"));
+
+      console.log(solution("203"));
+      // expect(solution(input)).toEqual(expected);
     }
   );
 });

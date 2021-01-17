@@ -21,7 +21,7 @@ const permutations = (arr) => {
   );
 };
 
-export const stringNumberCombinations2 = (input: string): string => {
+export const solution = (input: string): string => {
   const numbersString = input.replace(/\D/g, "").trim();
   const combinations = permutations2(numbersString);
   return combinations
@@ -31,21 +31,21 @@ export const stringNumberCombinations2 = (input: string): string => {
 };
 
 const permutations2 = (string: string): string[][] => {
-  if (!!string.length && string.length < 2 ){
-    return [string.split("")]
+  if (!!string.length && string.length < 2) {
+    return [string.split("")];
   }
-  let result = [];
+  const result = [];
 
-  for (let i = 0; i < string.length; i++){
-    let char = string[i];
+  for (let i = 0; i < string.length; i++) {
+    const char = string[i];
 
-    if(string.indexOf(char) !== i){
+    if (string.indexOf(char) !== i) {
       continue;
     }
 
-    let remainder = string.slice(0, i) + string.slice(i + 1, string.length);
+    const remainder = string.slice(0, i) + string.slice(i + 1, string.length);
 
-    for (let permutation of permutations2(remainder)){
+    for (const permutation of permutations2(remainder)) {
       result.push([char + permutation]);
     }
   }
